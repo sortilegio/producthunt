@@ -32,7 +32,7 @@ class ProductsController < ApplicationController
     if product.update(product_params)
       redirect_to products_path, notice: "El producto ha sido modificado con éxito"
     else
-      reder :edit
+      render :edit
     end
   end
 
@@ -45,6 +45,6 @@ class ProductsController < ApplicationController
 
   private
     def product_params
-      params.require(:product).permit(:name, :url, :description)
+      params.require(:product).permit(:name, :url, :description, :image)
     end
 end
